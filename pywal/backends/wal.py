@@ -71,11 +71,11 @@ def adjust(colors, light):
 
     else:
         # Darken the background color slightly.
-        if raw_colors[0][1] != "0":
-            raw_colors[0] = util.darken_color(raw_colors[0], 0.40)
+        dark = raw_colors[0]
+        raw_colors[8] = dark
+        raw_colors[0] = util.darken_color(dark, 0.40)
 
         raw_colors[7] = util.blend_color(raw_colors[7], "#EEEEEE")
-        raw_colors[8] = util.darken_color(raw_colors[7], 0.30)
         raw_colors[15] = util.blend_color(raw_colors[15], "#EEEEEE")
 
     return raw_colors
